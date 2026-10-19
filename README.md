@@ -47,7 +47,7 @@
 
 ## 前置条件
 
-1. **LM Studio** 已安装且已下载模型 `hy-mt2-1.8b`（本机已就绪）。
+1. **LM Studio** 已安装且已下载模型 `hy-mt2-1.8b`。
 2. LM Studio 服务端口 `1234` 可访问；App 会在翻译时自动启动服务、自动加载模型。
 3. API Token 已配置（`config.json` 的 `api_token`）。
 4. RapidOCR 模型已随程序打包/安装，**无需联网下载**。
