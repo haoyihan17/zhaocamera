@@ -1,0 +1,15 @@
+# Runtime dependencies
+PyQt5>=5.15
+Pillow>=9
+requests>=2.28
+rapidocr>=3.0          # deep-learning OCR (PaddleOCR ONNX)
+onnxruntime>=1.19      # rapidocr inference backend
+ctranslate2>=4.0       # built-in offline translation (Opus-MT)
+sentencepiece>=0.2     # offline translation tokenizer
+
+# Build only (installed by build_exe.bat)
+# pyinstaller>=6
+
+# 离线翻译模型（约 162MB，放在 exe 同级的 offline_models/ 下）
+# 来源：https://argos-net.com/v1/translate-zh_en-1_9.argosmodel
+#       https://argos-net.com/v1/translate-en_zh-1_9.argosmodel

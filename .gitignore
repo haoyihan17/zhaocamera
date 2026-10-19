@@ -1,0 +1,43 @@
+# ========== 绝不能提交：运行时配置（含 API Key / Token） ==========
+config.json
+config.json.bad
+*.bad
+selftest_report.txt
+
+# ========== 开发日志（仅本地保留，不公开） ==========
+开发日志.md
+
+# ========== 构建产物（体积大，走 GitHub Releases） ==========
+dist/
+build/
+*.exe
+*.msi
+*.app
+*.dmg
+
+# ========== 第三方模型（体积大，按 README 说明自行下载） ==========
+offline_models/
+
+# ========== Python ==========
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.buildenv/
+.pytest_cache/
+
+# ========== 编辑器 / 系统 ==========
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ========== 日志 / 临时 ==========
+*.log
+tmp/
+temp/

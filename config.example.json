@@ -1,0 +1,21 @@
+{
+  "api_token": "",
+  "lmstudio_url": "http://127.0.0.1:1234/v1",
+  "model": "hy-mt2-1.8b",
+  "theme": "blue_pink",
+  "opacity": 15,
+  "font_color": "",
+  "font_size": 13,
+  "always_on_top": true,
+  "translate_direction": "auto",
+  "translate_backend": "auto",
+  "offline_model_dir": "",
+  "cloud_base_url": "https://api.deepseek.com/v1",
+  "cloud_api_key": "",
+  "cloud_model": "deepseek-chat",
+  "first_run_done": false,
+  "ocr_engine": "rapidocr",
+  "autostart": false,
+  "custom_bg_path": "",
+  "show_preview": true
+}
