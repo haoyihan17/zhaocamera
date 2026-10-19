@@ -57,12 +57,16 @@
 **方式一：一键运行（推荐）**
 双击 `run.bat`，托盘出现「赵相机」图标并弹出悬浮窗。
 
-> 运行环境为 `D:\zhaocamera_build\.buildenv`（**纯英文路径**，因 pip 版 Qt 在中文路径下解析不到插件）。请勿删除该目录。
+`run.bat` 会依次尝试：项目内 `.venv` → 环境变量 `ZHAO_PYTHON` → 构建目录里的 venv → 系统 `pythonw`。
+
+> ⚠️ **路径要求**：pip 版 PyQt5 在**中文路径**下解析不到 Qt 插件，所以 Python 环境要装在纯英文路径下
+> （例如 `D:\zhaocamera_build\.buildenv`，这也是 `build_exe.bat` 自动创建的位置）。
 
 **方式二：命令行**
 ```powershell
-D:\zhaocamera_build\.buildenv\Scripts\pythonw.exe main.py
+pythonw main.py
 ```
+（前提是当前 Python 环境已 `pip install -r requirements.txt`，且安装路径不含中文）
 
 **方式三：打包后的 exe**
 运行 `build_exe.bat`，产物在 `dist\ZhaoCamera.exe`（双击即用，可改名）。
@@ -104,7 +108,8 @@ D:\zhaocamera_build\.buildenv\Scripts\pythonw.exe main.py
 ```bat
 build_exe.bat
 ```
-- 在 `D:\zhaocamera_build`（纯英文路径）用干净 venv 打包，含 RapidOCR 模型，单文件 `dist\ZhaoCamera.exe`（约 143MB）。
+- 在**纯英文路径**下用干净 venv 打包（`build_exe.bat` 会自动建到脚本所在盘的根目录，如 `D:\zhaocamera_build`），
+  产物是单文件 `dist\ZhaoCamera.exe`（约 163MB，含 RapidOCR 模型）。
 - `config.json` 写到 exe 同目录（请把 exe 放在可写目录）。
 
 ## 给别人的电脑用（对方没有本地 AI）
