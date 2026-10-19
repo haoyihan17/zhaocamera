@@ -96,6 +96,12 @@ def _tidy(text, direction):
         text = re.sub(r"(?<=[%s])\s+(?=[%s])" % (_CJK, _CJK), "", text)
         text = re.sub(r"\s+([，。！？；：、）】》])", r"\1", text)
         text = re.sub(r"([（【《])\s+", r"\1", text)
+        # 中文标点规范化：紧跟汉字的 , . ; : 换成全角（不动数字/英文里的）
+        text = re.sub(r"(?<=[%s]),\s*" % _CJK, "，", text)
+        text = re.sub(r"(?<=[%s]);\s*" % _CJK, "；", text)
+        text = re.sub(r"(?<=[%s]):\s*" % _CJK, "：", text)
+        text = re.sub(r"(?<=[%s])\.\s*(?=$|\s)" % _CJK, "。", text)
+        text = re.sub(r"\.\s*$", "。", text)
     else:
         text = re.sub(r"\s+([,.!?;:])", r"\1", text)
     return text
@@ -105,9 +111,10 @@ def _run(translator, tokenizer, text):
     pieces = tokenizer.encode(text, out_type=str)
     if not pieces:
         return ""
+    # beam_size=6：实测比 4 略好（predict 能译成「预测」而不是「预言」），耗时几乎不变
     # no_repeat_ngram / repetition_penalty：抑制小模型的重复循环
     res = translator.translate_batch(
-        [pieces], beam_size=4, no_repeat_ngram_size=3, repetition_penalty=1.3)
+        [pieces], beam_size=6, no_repeat_ngram_size=3, repetition_penalty=1.3)
     return "".join(res[0].hypotheses[0])
 
 
