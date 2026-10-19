@@ -10,7 +10,7 @@
 
 ## 下载安装
 
-到 [Releases](../../releases) 页面下载最新的 `赵相机_v1.0_安装包.exe`，双击安装即可。
+到 [Releases](../../releases) 页面下载最新的 `赵相机_v1.0.1_安装包.exe`，双击安装即可。
 
 - **不需要管理员权限**，装到当前用户目录
 - 自动创建桌面和开始菜单快捷方式
@@ -126,7 +126,7 @@ build_exe.bat
 对方双击 → 一路「下一步」→ 自动装好并创建桌面 + 开始菜单快捷方式，**不需要管理员权限**（装到用户目录）。
 安装包内含离线翻译模型，对方**断网也能翻译**；卸载走「开始菜单 → 卸载 赵相机」。
 
-- 安装包：`D:\zhaocamera_release\赵相机_v1.0_安装包.exe`
+- 安装包：`D:\zhaocamera_release\赵相机_v1.0.1_安装包.exe`
 - 打包脚本：`D:\zhaocamera_release\赵相机安装包.iss`（用 Inno Setup 6 的 `ISCC.exe` 重新编译）
 - 纯净配置：`D:\zhaocamera_release\赵相机\config.json`（**不含任何个人凭据**；`first_run_done=false` 让对方第一次打开时看到引导页）
 
